@@ -1,21 +1,25 @@
 var connection = require("../config/connection.js");
-function printQuestionMarks(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
-        arr.push("?");
-        
-    }
-    return arr.toString();
-}
-function objToSql(ob) {
-    var arr = [];
-    for(var key in ob){
-        var value = ob[key];
-        if(Object.hasOwnProperty.call(ob,key)){
-            if(typeof value === "strong" && value.indexOf('')>= 0){
-                value = " " + value + "";
+
+var orm = {
+    all: (cb) => {
+        var queryString = "SELECT * FROM burgers;";
+        connection.query(queryString, (err, result)=> {
+            if (err) {
+                throw err
             }
-        }
+            cb(result);
+        })
+    },
+    create: (name,cb) =>{
+        var queryString = `INSERT into burgers(burger_name, devoured) VALUES ('${name}', False);`;
+        connection.query(queryString, (err, result) => {
+            if (err) {
+              throw err;
+            }
+      
+            cb(result);
+          })
     }
-    
 }
+
+module.exports = orm;

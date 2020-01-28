@@ -1,0 +1,25 @@
+{
+  "name": "Eat_A_Burger_HW",
+  "version": "1.0.0",
+  "description": "This assignment combies the uses for Handlebars, Express, MySQL.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lpmartinez1109/Eat_A_Burger_HW.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lpmartinez1109/Eat_A_Burger_HW/issues"
+  },
+  "homepage": "https://github.com/Lpmartinez1109/Eat_A_Burger_HW#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0"
+  }
+}
